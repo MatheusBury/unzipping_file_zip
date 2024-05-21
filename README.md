@@ -18,7 +18,7 @@ Este projeto contém um script Python que descompacta arquivos `.zip` em um dire
 
 2. Navegue até o diretório do projeto:
     ```sh
-    cd descompactador-de-arquivos
+    cd unzipping_file_zip
     ```
 
 3. Certifique-se de que você tem uma pasta chamada `Pasta para descompactar` no mesmo diretório que o script Python. Coloque seus arquivos `.zip` nesta pasta.

@@ -2,9 +2,9 @@
 import os
 import shutil
 
-path_name = 'Pasta para descompactar'
+path_name = r'G:\Drives compartilhados\Corrosion Segmentation Data\project_modec\MV30\EQUIP_AI_DELIVERY_05172024\alt_predictions'
 file_name = os.listdir(path_name)
-Output = f'{path_name}'
+Output = r'C:\Users\Operacao\Pictures\MV30 MASK'
 
 
 def descompactar(arquivo, pasta_destino):
