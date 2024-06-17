@@ -2,9 +2,9 @@
 import os
 import shutil
 
-path_name = r'G:\Drives compartilhados\Corrosion Segmentation Data\project_modec\MV30\EQUIP_AI_DELIVERY_05172024\3d_mask'
+path_name = r'G:\Drives compartilhados\OPERATION PHOTOS\Modec\2024\Photos_onboarding_2024\INSP_files\Project_C'
 file_name = os.listdir(path_name)
-Output = r'C:\Users\Operacao\Pictures\MV30 3D MASK'
+output = r'G:\Drives compartilhados\OPERATION PHOTOS\Modec\2024\Photos_onboarding_2024\360_resolucao_original\Project_C'
 
 
 def descompactar(arquivo, pasta_destino):
@@ -19,7 +19,23 @@ def descompactar(arquivo, pasta_destino):
             print(f'Erro ao descompactar o arquivo {arquivo}: {e}')
             pass  # Continue with the next file
         
-for arquivo in os.listdir(path_name):
+for folder in os.listdir(path_name):
+    print(f'Processing folder: {folder}')
     
-    if os.path.isfile(os.path.join(path_name, arquivo)):
-        descompactar(arquivo, Output)
+    if folder != 'PW_zipado': #aqui vc pode escolher uma pasta especifica
+
+        full_path_folder = os.path.join(path_name, folder)
+        list_full_path_folder = os.listdir(full_path_folder)
+
+        for file in list_full_path_folder:
+            file_path = os.path.join(full_path_folder,file)
+
+            if os.path.isfile(file_path):
+                descompactar(file_path, output)
+            else:
+                print(f'{file} is not a file.')
+        else:
+            print(f'Skipping file: {file}')
+
+
+print(f'Total Folders : {len(folder)}')
